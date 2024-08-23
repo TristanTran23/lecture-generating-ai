@@ -1,6 +1,6 @@
 import { NavBar } from "@/components/navbar";
 
-const LoginLayout =({
+const HomeLayout =({
     children
 }: {
     children: React.ReactNode;
@@ -8,11 +8,11 @@ const LoginLayout =({
     return (
         <div className="h-full">
             <NavBar />
-            <main className="h-full pt-40">
+            <main className="h-full">
                 {children}
             </main>
         </div>
     )
 }
 
-export default LoginLayout;
+export default HomeLayout;
