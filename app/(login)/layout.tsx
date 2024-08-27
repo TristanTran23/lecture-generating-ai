@@ -1,3 +1,5 @@
+"use client";
+
 import { NavBar } from "@/components/navbar";
 
 const LoginLayout =({
