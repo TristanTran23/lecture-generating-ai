@@ -1,20 +1,22 @@
 "use client";
 
 import { NavBar } from "@/components/navbar";
+import { SideBar } from "@/components/sidebar";
 
-const LoginLayout =({
+const HomeLayout =({
     children
 }: {
     children: React.ReactNode;
 }) => {
     return (
-        <div className="h-full">
+        <div className="h-full flex">
             <NavBar />
-            <main className="h-full pt-40">
+            <SideBar />
+            <main className="flex-1 overflow-y-auto h-full">
                 {children}
             </main>
         </div>
     )
 }
 
-export default LoginLayout;
+export default HomeLayout;
