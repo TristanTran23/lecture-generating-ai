@@ -1,15 +1,8 @@
+"use client";
+
 import { Heading } from "./_components/heading";
-import { auth } from "@/config/firebase";
-import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-    const user = auth.currentUser;
-    const router = useRouter();
-
-    if (!user) {
-        router.push("/");
-    }
-
     return (
         <div className="min-h-full flex flex-col">
             <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">

@@ -8,16 +8,15 @@ import {
     DialogTrigger,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "@/config/firebase";
 import { useRouter } from "next/navigation";
 
-export const SignInButton = () => {
+export const AuthModal = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
-    const isAuthenticated = auth.currentUser !== null;
 
     const SignUp = async () => {
         await createUserWithEmailAndPassword(auth, email, password)
@@ -27,6 +26,16 @@ export const SignInButton = () => {
             alert("Sign up failed")
         }
     };
+
+    const Login = async () => {
+        await signInWithEmailAndPassword(auth, email, password)
+        if (auth.currentUser) {
+            router.push("/home")
+        } else {
+            alert("Login failed")
+        }
+    };
+
 
     return (
         <div>
@@ -72,7 +81,7 @@ export const SignInButton = () => {
                     </DialogHeader>
                     <DialogClose className="flex justify-end p-2">
                         <Button variant="secondary">Cancel</Button>
-                        <Button onClick={SignUp}>Log In</Button>
+                        <Button onClick={Login}>Log In</Button>
                     </DialogClose>
                 </DialogContent>
             </Dialog>

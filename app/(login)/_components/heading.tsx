@@ -6,8 +6,10 @@ import { ArrowRight } from "lucide-react";
 import  Link  from "next/link";
 import { auth } from "@/config/firebase";
 
+
 export const Heading = () => {
     const user = auth.currentUser;
+
 
     return (
         <div className="max-w-3xl space-y-4">
@@ -17,7 +19,7 @@ export const Heading = () => {
             <div className="flex items-center justify-center">
                 <Logo width={100} height={100} />
             </div>
-            <Button size="default" asChild onClick={() => auth.signOut()}>
+            <Button size="default" asChild>
                 <Link href="/home">
                     Enter SillyLecture
                     <ArrowRight className="ml-2 h-4 w-4" />
