@@ -1,18 +1,28 @@
 "use client";
 
 import { Logo } from "@/components/logo";
-import { SignInButton } from "./signup";
-import { LogInButton } from "./login";
+import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
+import { auth } from "@/config/firebase";
+
 
 export const NavBar = () => {
+    const user = auth.currentUser;
+    const router = useRouter();
+
     return (
-        <div>
-            <div className="z-50 bg-background fixed flex items-center  w-full p-6">
+        <div className="bg-background fixed flex items-center w-full p-6">
             <Logo width={40} height={40} />
-            <h1 className="text-2xl font-bold ">SillyLecture</h1>
-            <SignInButton title="Sign up"/>
-            <LogInButton title="Log in"/>
-            </div>
+            <h1 className="text-xl font-bold ">SillyLecture</h1>
+            {user && (
+                <div className="ml-auto justify-end w-full flex items-center gap-x-4">
+                    <Button onClick={() => router.push("/?show=true&signup=true")}>Sign Up</Button>
+                    <Button variant="secondary" onClick={() => router.push("/?show=true&login=true")}>Login</Button>
+                </div>) ||
+                <div className="ml-auto justify-end w-full flex items-center gap-x-4"> 
+                    <Button variant="secondary" onClick={() => router.push("/?show=true*logout=true")}>Log out</Button>
+                </div>
+            }
         </div>
     )
 }

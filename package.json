@@ -17,11 +17,13 @@
     "dotenv": "^16.4.5",
     "firebase": "^10.13.1",
     "firebase-tools": "^13.17.0",
+    "firebaseui": "^6.1.0",
     "lucide-react": "^0.427.0",
     "next": "14.2.5",
     "process": "^0.11.10",
     "react": "^18",
     "react-dom": "^18",
+    "react-modal": "^3.16.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

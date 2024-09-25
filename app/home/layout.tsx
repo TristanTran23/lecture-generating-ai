@@ -10,7 +10,6 @@ const HomeLayout =({
 }) => {
     return (
         <div className="h-full flex">
-            <NavBar />
             <SideBar />
             <main className="flex-1 overflow-y-auto h-full">
                 {children}
