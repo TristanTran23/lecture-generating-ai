@@ -23,6 +23,7 @@
     "process": "^0.11.10",
     "react": "^18",
     "react-dom": "^18",
+    "react-modal": "^3.16.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

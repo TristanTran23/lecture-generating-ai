@@ -3,13 +3,17 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import  Link  from "next/link";
 import { auth } from "@/config/firebase";
+import { useRouter } from "next/navigation";
 
 
 export const Heading = () => {
     const user = auth.currentUser;
+    const router = useRouter();
 
+    const EnterMain = () => {
+        (!!!user) ? router.push("/?show=true&login=true") : router.push("/home")
+    }
 
     return (
         <div className="max-w-3xl space-y-4">
@@ -19,11 +23,9 @@ export const Heading = () => {
             <div className="flex items-center justify-center">
                 <Logo width={100} height={100} />
             </div>
-            <Button size="default" asChild>
-                <Link href="/home">
+            <Button size="default" onClick={EnterMain}>
                     Enter SillyLecture
                     <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
             </Button>
         </div>
     )
