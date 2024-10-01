@@ -2,13 +2,10 @@
 
 import { AuthModal } from "@/components/authmodal";
 import { Heading } from "./_components/heading";
+import { useSearchParams } from "next/navigation";
 
-type SearchParamProps = {
-    searchParams: Record<string, string> | null | undefined;
-};
-
-const LoginPage = ( { searchParams }: SearchParamProps) => {
-    const show = searchParams?.show;
+const LoginPage = () => {
+    const show = useSearchParams().get("show");
 
     return (
         <div className="min-h-full flex flex-col">

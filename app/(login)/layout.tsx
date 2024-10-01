@@ -1,6 +1,7 @@
 "use client";
 
 import { NavBar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 const LoginLayout =({
     children
@@ -13,6 +14,7 @@ const LoginLayout =({
             <main className="h-full pt-40">
                 {children}
             </main>
+            <Toaster />
         </div>
     )
 }
