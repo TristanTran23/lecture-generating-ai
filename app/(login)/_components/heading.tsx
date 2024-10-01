@@ -12,7 +12,7 @@ export const Heading = () => {
     const router = useRouter();
 
     const EnterMain = () => {
-        (!!!user) ? router.push("/?show=true&login=true") : router.push("/home")
+        (!!user) ? router.push("/home") : router.push("/?show=true&login=true");
     }
 
     return (

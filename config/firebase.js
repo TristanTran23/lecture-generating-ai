@@ -9,7 +9,8 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
   appId: process.env.NEXT_PUBLIC_APPID,
-  measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID,
+  databaseURL: process.env.NEXT_PUBLIC_DATABASEURL,
 };
 
 const app = initializeApp(firebaseConfig);
